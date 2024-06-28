@@ -1,4 +1,4 @@
-let diccionario = ["APPLE", "ANGEL", "MOUSE", "HOUSE", "PLATE", "PLACE"]
+let diccionario = ["APPLE", "ANGEL", "MOUSE", "HOUSE", "PLATE", "PLACE", "HOME", "SLATE", "SLEET", "SWEET", "MEATY","BEAST","BEERS","HEAVY"]
 
 let random = Math.random()*diccionario.length //numero aleatorio entre 0 y 5
 random = Math.floor(random)
