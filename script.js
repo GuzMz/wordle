@@ -15,9 +15,6 @@ button.addEventListener("click", enter)
 
 function enter(){
     let intento = input.value.toUpperCase()
-    if (intento == palabraSecreta){
-        gameOver("Ganaste")
-    }
     const GRID = document.getElementById("grid");
     let row = document.createElement("div")
     row.className = "row"
@@ -40,6 +37,9 @@ function enter(){
     attemptTicker("Intentos: "+oportunidades)
     if(oportunidades == 0){
         gameOver("Perdiste");
+    }
+    if (intento == palabraSecreta){
+        gameOver("Ganaste")
     }
 }
 
