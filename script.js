@@ -5,6 +5,7 @@ random = Math.floor(random)
 
 let palabraSecreta = diccionario[random]
 let oportunidades = 6;
+attemptTicker("Intentos: "+oportunidades)
 
 let button = document.getElementById("guess-button")
 let input = document.getElementById("guess-input")
@@ -25,6 +26,7 @@ function enter(){
         let letra = document.createElement("span")
         letra.className = "letter"
         letra.innerHTML = intento[i]
+        row.appendChild(letra)
         if (palabraSecreta[i] == intento [i]){
             letra.style.backgroundColor = "lightgreen";
         } else if(palabraSecreta.includes(intento[i])){
@@ -32,10 +34,10 @@ function enter(){
         } else{
             letra.style.backgroundColor = "lightgray";
         }
-        row.appendChild(letra)
     }
     GRID.appendChild(row)
     oportunidades--
+    attemptTicker("Intentos: "+oportunidades)
     if(oportunidades == 0){
         gameOver("Perdiste");
     }
@@ -45,7 +47,12 @@ function gameOver(mensaje){
     button.disabled = true;
     input.disabled = true;
     let contenedor = document.getElementById("guesses");
-    contenedor.innerHTML = "<h1>" + mensaje + "</h1>"
+    contenedor.innerHTML = "<h3>" + mensaje + "</h3>"
+}
+
+function attemptTicker(mensaje){
+    let contenedor = document.getElementById("guesses");
+    contenedor.innerHTML = "<h3>" + mensaje + "</h3>"
 }
 
 //[1,2,3].forEach(element =>){
